@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Zenkai AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="sidebar" id="sidebar">
+
+<h2>Zenkai AI</h2>
+
+<div id="profileBox" style="
+display:none;
+text-align:center;
+margin-top:15px;
+margin-bottom:20px;
+">
+
+<img id="userPic"
+style="
+width:70px;
+height:70px;
+border-radius:50%;
+border:3px solid #ff00ff;
+box-shadow:0 0 15px #ff00ff;
+">
+
+<div id="userName"
+style="
+color:white;
+font-weight:bold;
+margin-top:10px;
+font-size:18px;
+">
+</div>
+
+</div>
+
+<button onclick="newChat()">➕ New Chat</button>
+
+<button onclick="clearChat()">🗑 Clear Chat</button>
+
+<button onclick="toggleTheme()">🌙 Theme</button>
+
+</div>
+
+<div class="chat-container">
+
+<div class="header">
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+">
+
+<button class="menu-btn" onclick="openSidebar()">
+☰
+</button>
+
+<button id="loginBtn" onclick="googleLogin()" style="
+background:#ff00ff;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:12px;
+font-weight:bold;
+box-shadow:0 0 15px #ff00ff;
+cursor:pointer;
+">
+🔥 Google Login
+</button>
+
+</div>
+
+<button onclick="logout()" class="logout-btn">
+🚪 Logout
+</button>
+
+<div class="ai-orb"></div>
+
+👾 Zenkai AI
+
+</div>
+
+<div class="messages" id="messages">
+
+<div class="message">
+⚡ Zenkai AI Online
+
+Ask me anything...
+</div>
+
+</div>
+
+<div class="input-area">
+
+<input type="text" id="input" placeholder="Ask something...">
+
+<button onclick="sendMessage()">Send</button>
+
+<button onclick="startVoice()">🎤</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
