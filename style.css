@@ -1,0 +1,214 @@
+/* ===== ADVANCED UPGRADE PATCH ===== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+overflow-x:hidden;
+}
+
+/* Better Chat Container */
+
+.chat-container{
+background:rgba(20,20,30,.45) !important;
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+box-shadow:
+0 0 25px rgba(255,0,255,.5),
+0 0 80px rgba(106,0,255,.25);
+
+border:1px solid rgba(255,255,255,.12);
+}
+
+/* Better Header */
+
+.header{
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* Better Messages */
+
+.message{
+transition:.25s;
+}
+
+.message:hover{
+transform:translateY(-2px);
+}
+
+/* Better Input */
+
+input{
+transition:.25s;
+}
+
+input:focus{
+outline:none;
+
+box-shadow:
+0 0 10px rgba(255,0,255,.5);
+
+border:1px solid rgba(255,0,255,.4);
+}
+
+/* Premium Buttons */
+
+button{
+transition:
+transform .25s,
+box-shadow .25s;
+}
+
+button:hover{
+transform:translateY(-2px);
+
+box-shadow:
+0 0 25px #ff00ff,
+0 0 50px rgba(255,0,255,.5);
+}
+
+/* Better Sidebar */
+
+.sidebar{
+left:0 !important;
+
+transform:translateX(-120%);
+
+transition:.4s ease;
+}
+
+.sidebar.active{
+transform:translateX(0);
+}
+
+/* Scrollbar */
+
+.messages::-webkit-scrollbar{
+width:6px;
+}
+
+.messages::-webkit-scrollbar-thumb{
+background:#ff00ff;
+border-radius:10px;
+}
+
+.sidebar::-webkit-scrollbar{
+width:5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+background:#ff00ff;
+border-radius:10px;
+}
+
+/* AI Orb Upgrade */
+
+.ai-orb{
+
+animation:
+floatOrb 3s infinite ease-in-out,
+pulseGlow 2s infinite alternate;
+
+}
+
+@keyframes pulseGlow{
+
+from{
+
+box-shadow:
+0 0 20px #ff00ff,
+0 0 60px #6a00ff;
+
+}
+
+to{
+
+box-shadow:
+0 0 40px #ff00ff,
+0 0 120px #6a00ff;
+
+}
+
+}
+
+/* Profile Image Upgrade */
+
+#userPic{
+
+transition:.3s;
+
+}
+
+#userPic:hover{
+
+transform:scale(1.08);
+
+}
+
+/* Mobile Upgrade */
+
+@media(max-width:768px){
+
+.chat-container{
+
+width:min(95%,420px);
+
+height:95vh;
+
+}
+
+.header{
+
+font-size:20px;
+
+}
+
+}
+
+/* Desktop Upgrade */
+
+@media(min-width:769px){
+
+.chat-container{
+
+width:420px;
+
+height:720px;
+
+}
+
+}
+.header{
+position:relative;
+overflow:hidden;
+}
+
+.header::after{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.15),
+transparent
+);
+animation:shine 4s infinite;
+}
+
+@keyframes shine{
+0%{
+left:-100%;
+}
+100%{
+left:120%;
+}
+  }
