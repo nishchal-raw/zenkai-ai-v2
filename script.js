@@ -29,7 +29,7 @@ const provider = new GoogleAuthProvider();
 
 /* GEMINI KEY */
 
-const GEMINI_API_KEY = "YAHAN_APNI_GEMINI_API_KEY_DALNA";
+const GEMINI_API_KEY = "AQ.Ab8RN6JQlPvoiR5nVH8Hm3wZUNVLwAxanhhKJtgTUKIpaOmP0Q";
 
 /* CHAT STORAGE */
 
