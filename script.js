@@ -162,6 +162,16 @@ sidebar.style.left = "0px";
 
 };
 
+/* CLOSE SIDEBAR */
+
+window.closeSidebar = function(){
+
+const sidebar = document.getElementById("sidebar");
+
+sidebar.style.left = "-270px";
+
+};
+
 /* NEW CHAT */
 
 window.newChat = function(){
@@ -200,6 +210,7 @@ window.toggleTheme = function(){
 document.body.classList.toggle("light");
 
 };
+
 /* LOAD OLD CHATS */
 
 window.onload = function(){
@@ -335,6 +346,9 @@ text:reply
 
 saveChat();
 
+messages.scrollTop =
+messages.scrollHeight;
+
 })
 
 .catch(error=>{
@@ -342,3 +356,83 @@ saveChat();
 console.log(error);
 
 aiMessage.innerText =
+"⚠️ Error: " + error.message;
+
+});
+
+};
+
+/* VOICE RECOGNITION */
+
+const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+recognition.lang = 'en-US';
+
+window.startVoice = function(){
+
+const micBtn = document.querySelector('button[onclick="startVoice()"]');
+
+if(micBtn.style.backgroundColor === "rgb(255, 0, 255)"){
+
+recognition.stop();
+
+micBtn.style.backgroundColor = "white";
+
+micBtn.style.color = "black";
+
+return;
+
+}
+
+micBtn.style.backgroundColor = "#ff00ff";
+
+micBtn.style.color = "white";
+
+recognition.start();
+
+};
+
+recognition.onstart = function(){
+
+console.log("Voice recognition started");
+
+};
+
+recognition.onresult = function(event){
+
+let transcript = "";
+
+for(let i = event.resultIndex; i < event.results.length; i++){
+
+if(event.results[i].isFinal){
+
+transcript += event.results[i][0].transcript;
+
+}
+
+}
+
+if(transcript){
+
+document.getElementById("input").value = transcript;
+
+}
+
+};
+
+recognition.onerror = function(event){
+
+console.log("Error: " + event.error);
+
+alert("Microphone error: " + event.error);
+
+};
+
+recognition.onend = function(){
+
+const micBtn = document.querySelector('button[onclick="startVoice()"]');
+
+micBtn.style.backgroundColor = "white";
+
+micBtn.style.color = "black";
+
+};
